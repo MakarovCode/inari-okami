@@ -6,6 +6,12 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
 
+  resources :interest, only: [:index, :create] do
+    collection do
+      get "thanks"
+    end
+  end
+
   namespace :api do
     namespace :v1 do
       resources :orders, only: [:index, :show, :create, :update, :destroy] do

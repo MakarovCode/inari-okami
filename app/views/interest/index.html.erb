@@ -1,0 +1,140 @@
+<div class="interest-form-container">
+  <h1 class="title">PERLA NEGRA</h1>
+  
+  <%= form_with scope: :interest, url: interest_index_path, method: :post, local: true, html: { class: 'interest-form' } do |form| %>
+    
+    <div class="form-group">
+      <%= form.label :name, "Nombre *", class: 'form-label' %>
+      <%= form.text_field :name, required: true, class: 'form-input', placeholder: 'Ingrese su nombre' %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :email, "Correo Electrónico", class: 'form-label' %>
+      <%= form.email_field :email, class: 'form-input', placeholder: 'correo@ejemplo.com' %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :phone, "Teléfono *", class: 'form-label' %>
+      <%= form.telephone_field :phone, required: true, class: 'form-input', placeholder: 'Ingrese su teléfono' %>
+    </div>
+
+    <div class="form-group">
+      <%= form.submit "Enviar", class: 'form-submit' %>
+    </div>
+  <% end %>
+</div>
+
+<style>
+  body {
+    background-color: #000000;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  .interest-form-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 40px;
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
+  }
+
+  .title {
+    text-align: center;
+    color: #ffffff;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.2);
+  }
+
+  .interest-form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+  .form-label {
+    display: block;
+    color: #ffffff;
+    font-size: 1rem;
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+
+  .form-input {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 1rem;
+    border: 2px solid #000000 !important;
+    border-radius: 5px;
+    background-color: #000000 !important;
+    color: #ffffff;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+  }
+
+  .form-input:focus {
+    outline: none;
+    border-color: #f30854 !important;
+    background-color: #f30854 !important;
+    color: #ffffff;
+  }
+
+  .form-input::placeholder {
+    color: #888888;
+  }
+
+  .form-submit {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #f30854 !important;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+    padding: 10px !important;
+  }
+
+  .form-submit:hover {
+    background-color: #B00020;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(220, 20, 60, 0.5);
+  }
+
+  .form-submit:active {
+    transform: translateY(0);
+  }
+
+  /* Flash messages styling */
+  .notice, .alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: 500;
+  }
+
+  .notice {
+    background-color: #2d5016;
+    color: #90ee90;
+    border: 1px solid #90ee90;
+  }
+
+  .alert {
+    background-color: #5c1616;
+    color: #ffb3b3;
+    border: 1px solid #ffb3b3;
+  }
+</style>
+

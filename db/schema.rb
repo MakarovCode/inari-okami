@@ -67,22 +67,22 @@ ActiveRecord::Schema[7.0].define(version: 2024_03_13_000453) do
   end
 
   create_table "order_products", force: :cascade do |t|
-    t.bigint "product_id", null: false
+    t.bigint "product_id"
     t.float "price"
     t.float "units"
     t.float "total"
     t.integer "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "order_id", null: false
+    t.bigint "order_id"
     t.index ["order_id"], name: "index_order_products_on_order_id"
     t.index ["product_id"], name: "index_order_products_on_product_id"
   end
 
   create_table "orders", force: :cascade do |t|
-    t.bigint "client_id", null: false
+    t.bigint "client_id"
     t.float "total"
-    t.bigint "payment_method_id", null: false
+    t.bigint "payment_method_id"
     t.integer "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
