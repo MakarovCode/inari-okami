@@ -1,5 +1,5 @@
 <div class="interest-form-container">
-  <h1 class="title">PERLA NEGRA</h1>
+  <%= image_tag "logo.jpg", alt: "Perla Negra", class: "logo" %>
   
   <%= form_with scope: :interest, url: interest_index_path, method: :post, local: true, html: { class: 'interest-form' } do |form| %>
     
@@ -39,6 +39,15 @@
     background-color: #1a1a1a;
     border-radius: 10px;
     box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
+  }
+
+  .logo {
+    display: block;
+    margin: 0 auto 30px;
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+    border-radius: 300px;
   }
 
   .title {
